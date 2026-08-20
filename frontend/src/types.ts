@@ -27,7 +27,24 @@ export interface AppContextType {
 }
 
 
+export interface IRestaurant {
+    _id: string;
+    name: string;
+    description: string;
+    image: string;
+    ownerId: string;
+    phone: number;
+    isVerified: boolean;
 
+    autoLocation:{
+        type: "Point",
+        coordinates: [number, number];  // [longitude, latitude]
+        formatedAddress: string;
+    };
+
+    isOpen: boolean;
+    createdAt: Date; 
+}
 
 
 

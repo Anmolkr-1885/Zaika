@@ -45,12 +45,9 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     }
   }
 
-  
-
   useEffect(() => {
     fetchUser();
   }, []);
-
 
   useEffect(() => {
     if (!navigator.geolocation)
@@ -66,26 +63,19 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         );
         const data = await res.json();
 
-        console.log("📍 Coordinates:", {
-  latitude,
-  longitude,
-});
-
-
         setLocation({
           latitude,
           longitude,
           formattedAddress: data.display_name || "current location",
         });
 
-       setCity(
-  data.address?.city ||
-    data.address?.town ||
-    data.address?.village ||
-    data.address?.municipality ||
-    data.address?.county ||
-    "Your Location"
-);
+        setCity(
+          data.address?.city ||
+          data.address?.town ||
+          data.address?.village ||
+          "Your Location"
+        );
+         
         setLoadingLocation(false);
       } catch (error) {
         setLocation({
