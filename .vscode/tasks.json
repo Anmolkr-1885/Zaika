@@ -1,0 +1,179 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Zaika: Frontend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Auth",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/auth"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Restaurant",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/restaurant"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Utils",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/utils"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "🚀 Zaika: Start All",
+      "dependsOn": [
+        "Zaika: Frontend",
+        "Zaika: Auth",
+        "Zaika: Restaurant",
+        "Zaika: Utils"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+
+    {
+      "label": "📦 Zaika: Install Frontend",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📦 Zaika: Install Auth",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/auth"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📦 Zaika: Install Restaurant",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/restaurant"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📦 Zaika: Install Utils",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/utils"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "Zaika: Frontend - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Auth - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/auth"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Restaurant - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/restaurant"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Zaika: Utils - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/utils"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "🔥 Zaika: Install & Start All",
+      "dependsOn": [
+        "Zaika: Frontend - Install & Start",
+        "Zaika: Auth - Install & Start",
+        "Zaika: Restaurant - Install & Start",
+        "Zaika: Utils - Install & Start"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    }
+  ]
+}

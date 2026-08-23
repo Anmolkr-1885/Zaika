@@ -7,7 +7,7 @@ import { VscLoading } from "react-icons/vsc";
 import axios from "axios";
 import { restaurantService } from "../main";
 import toast from "react-hot-toast";
-//import { useAppData } from "../context/AppContext";
+import { useAppData } from "../context/AppContext";
 
 interface MenuItemsProps {
   items: IMenuItem[];
@@ -57,33 +57,33 @@ const MenuItems = ({ items, onItemDeleted, isSeller }: MenuItemsProps) => {
     }
   };
 
-  // const { fetchCart } = useAppData();
+  const { fetchCart } = useAppData();
 
-//   const addToCart = async (restaurantId: string, itemId: string) => {
-//     try {
-//       setLoadingItemId(itemId);
+  const addToCart = async (restaurantId: string, itemId: string) => {
+    try {
+      setLoadingItemId(itemId);
 
-//       const { data } = await axios.post(
-//         `${restaurantService}/api/cart/add`,
-//         {
-//           restaurantId,
-//           itemId,
-//         },
-//         {
-//           headers: {
-//             Authorization: `Bearer ${localStorage.getItem("token")}`,
-//           },
-//         },
-//       );
+      const { data } = await axios.post(
+        `${restaurantService}/api/cart/add`,
+        {
+          restaurantId,
+          itemId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        },
+      );
 
-//       toast.success(data.message);
-//       fetchCart();
-//     } catch (error: any) {
-//       toast.error(error.response.data.message);
-//     } finally {
-//       setLoadingItemId(null);
-//     }
-//   };
+      toast.success(data.message);
+      fetchCart();
+    } catch (error: any) {
+      toast.error(error.response.data.message);
+    } finally {
+      setLoadingItemId(null);
+    }
+  };
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {items.map((item) => {
@@ -150,7 +150,7 @@ const MenuItems = ({ items, onItemDeleted, isSeller }: MenuItemsProps) => {
                   <button
                     disabled={!item.isAvailable || isLoading}
                     onClick={() => {
-                      // addToCart(item.restaurantId, item._id)
+                       addToCart(item.restaurantId, item._id)
                     }}
                     className={`flex items-center justify-center rounded-lg p-2 ${
                       !item.isAvailable || isLoading
