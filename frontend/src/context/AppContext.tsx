@@ -50,7 +50,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   }, []);
 
   useEffect(() => {
-    if (!navigator.geolocation)
+     if (!navigator.geolocation)
       return alert("Please Allow Location to continue");
     setLoadingLocation(true);
 
