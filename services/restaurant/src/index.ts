@@ -7,6 +7,8 @@ import itemRoutes from "./routes/menuitem.js";
 import cartRoutes from "./routes/cart.js"
 import addressRoutes from "./routes/address.js"
 import orderRoutes from "./routes/order.js"
+import { connectRabbitMQ } from "./config/rabbitmq.js";
+import { startPaymentConsumer } from "./config/payment.consumer.js";
 dotenv.config();
 
 const app = express();
@@ -16,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5001;
+await connectRabbitMQ();
+startPaymentConsumer();
 
 app.use("/api/restaurant", restaurantRoutes)
 app.use("/api/item",itemRoutes);
