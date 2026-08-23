@@ -24,7 +24,7 @@ export const addRestaurant = TryCatch(async (req: AuthenticatedRequest, res) => 
         });
     }
     
-    const { name, description, latitude, longitude, formatedAddress, phone } = req.body;
+    const { name, description, latitude, longitude, formattedAddress, phone } = req.body;
 
     if(!name || !latitude || !longitude) {
         return res.status(400).json({
@@ -59,7 +59,7 @@ export const addRestaurant = TryCatch(async (req: AuthenticatedRequest, res) => 
         autoLocation: {
             type: "Point",
             coordinates: [Number(longitude), Number(latitude)],
-            formatedAddress,
+            formattedAddress,
         },
         image: uploadResult.url,
         ownerId: user._id,

@@ -104,7 +104,7 @@ const RestaurantProfile = ({ restaurant, isSeller, onUpdate }: props) => {
 
             <div className="mt-1 flex items-center gap-2 text-sm text-gray-500">
               <BiMapPin className="h-4 w-4 text-red-500" />
-              {restaurant.autoLocation.formatedAddress ||
+              {restaurant.autoLocation.formattedAddress ||
                 "Location unavailable"}
             </div>
           </div>
