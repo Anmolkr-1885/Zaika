@@ -3,7 +3,11 @@ import { isAuth, isSeller } from "../middlewares/isAuth.js";
 import {
   createOrder,
   fetchOrderForPayment,
-} from "../controllers/order.js";
+  fetchRestaurantOrders,
+  getMyOrders,
+  fetchSingleOrder,
+  updateOrderStatus
+} from "../controllers/order.js"
 
 const router = express.Router();
 
@@ -14,7 +18,15 @@ router.get(
   "/restaurant/:restaurantId",
   isAuth,
   isSeller,
-  
+  fetchRestaurantOrders
 );
+router.put("/:orderId", isAuth, isSeller, updateOrderStatus);
+router.get("/my",isAuth,getMyOrders);
+router.get("/:id", isAuth, fetchSingleOrder);
+
+
+
+
+
 
 export default router;

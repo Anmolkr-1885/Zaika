@@ -5,6 +5,7 @@ import cors from "cors";
 import uploadRoutes from "./routes/cloudinary.js";
 import { connectRabbitMQ } from "./config/rabbitmq.js";
 import paymentRoutes from "./routes/payment.js"
+import morgan from "morgan";
 
 
 dotenv.config();
@@ -12,7 +13,7 @@ dotenv.config();
 connectRabbitMQ();
 
 const app = express();
-
+app.use(morgan("dev"));
 app.use(cors());
 
 app.use(express.json({ limit: "50mb"}));

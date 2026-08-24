@@ -9,10 +9,11 @@ import addressRoutes from "./routes/address.js"
 import orderRoutes from "./routes/order.js"
 import { connectRabbitMQ } from "./config/rabbitmq.js";
 import { startPaymentConsumer } from "./config/payment.consumer.js";
+import morgan from "morgan";
 dotenv.config();
 
 const app = express();
-
+app.use(morgan("dev"));
 app.use(cors());
 
 app.use(express.json());
