@@ -15,6 +15,22 @@
       },
       "problemMatcher": []
     },
+
+    {
+      "label": "Zaika: Admin",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/admin"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
     {
       "label": "Zaika: Auth",
       "type": "shell",
@@ -29,12 +45,13 @@
       },
       "problemMatcher": []
     },
+
     {
-      "label": "Zaika: Restaurant",
+      "label": "Zaika: Rider",
       "type": "shell",
       "command": "npm run dev",
       "options": {
-        "cwd": "${workspaceFolder}/services/restaurant"
+        "cwd": "${workspaceFolder}/services/rider"
       },
       "presentation": {
         "reveal": "always",
@@ -43,6 +60,7 @@
       },
       "problemMatcher": []
     },
+
     {
       "label": "Zaika: Utils",
       "type": "shell",
@@ -59,12 +77,45 @@
     },
 
     {
+      "label": "Zaika: Restaurant",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/restaurant"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "Zaika: Realtime",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/services/realtime"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
       "label": "🚀 Zaika: Start All",
       "dependsOn": [
         "Zaika: Frontend",
+        "Zaika: Admin",
         "Zaika: Auth",
+        "Zaika: Rider",
+        "Zaika: Utils",
         "Zaika: Restaurant",
-        "Zaika: Utils"
+        "Zaika: Realtime"
       ],
       "dependsOrder": "parallel",
       "problemMatcher": []
@@ -79,6 +130,17 @@
       },
       "problemMatcher": []
     },
+
+    {
+      "label": "📦 Zaika: Install Admin",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/admin"
+      },
+      "problemMatcher": []
+    },
+
     {
       "label": "📦 Zaika: Install Auth",
       "type": "shell",
@@ -88,6 +150,27 @@
       },
       "problemMatcher": []
     },
+
+    {
+      "label": "📦 Zaika: Install Rider",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/rider"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "📦 Zaika: Install Utils",
+      "type": "shell",
+      "command": "npm i",
+      "options": {
+        "cwd": "${workspaceFolder}/services/utils"
+      },
+      "problemMatcher": []
+    },
+
     {
       "label": "📦 Zaika: Install Restaurant",
       "type": "shell",
@@ -97,12 +180,13 @@
       },
       "problemMatcher": []
     },
+
     {
-      "label": "📦 Zaika: Install Utils",
+      "label": "📦 Zaika: Install Realtime",
       "type": "shell",
       "command": "npm i",
       "options": {
-        "cwd": "${workspaceFolder}/services/utils"
+        "cwd": "${workspaceFolder}/services/realtime"
       },
       "problemMatcher": []
     },
@@ -121,6 +205,22 @@
       },
       "problemMatcher": []
     },
+
+    {
+      "label": "Zaika: Admin - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/admin"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
     {
       "label": "Zaika: Auth - Install & Start",
       "type": "shell",
@@ -135,12 +235,13 @@
       },
       "problemMatcher": []
     },
+
     {
-      "label": "Zaika: Restaurant - Install & Start",
+      "label": "Zaika: Rider - Install & Start",
       "type": "shell",
       "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
       "options": {
-        "cwd": "${workspaceFolder}/services/restaurant"
+        "cwd": "${workspaceFolder}/services/rider"
       },
       "presentation": {
         "reveal": "always",
@@ -149,6 +250,7 @@
       },
       "problemMatcher": []
     },
+
     {
       "label": "Zaika: Utils - Install & Start",
       "type": "shell",
@@ -165,12 +267,45 @@
     },
 
     {
+      "label": "Zaika: Restaurant - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/restaurant"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "Zaika: Realtime - Install & Start",
+      "type": "shell",
+      "command": "npm i; if ($LASTEXITCODE -eq 0) { npm run dev }",
+      "options": {
+        "cwd": "${workspaceFolder}/services/realtime"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "zaika"
+      },
+      "problemMatcher": []
+    },
+
+    {
       "label": "🔥 Zaika: Install & Start All",
       "dependsOn": [
         "Zaika: Frontend - Install & Start",
+        "Zaika: Admin - Install & Start",
         "Zaika: Auth - Install & Start",
+        "Zaika: Rider - Install & Start",
+        "Zaika: Utils - Install & Start",
         "Zaika: Restaurant - Install & Start",
-        "Zaika: Utils - Install & Start"
+        "Zaika: Realtime - Install & Start"
       ],
       "dependsOrder": "parallel",
       "problemMatcher": []

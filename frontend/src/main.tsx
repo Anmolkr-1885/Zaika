@@ -14,6 +14,8 @@ export const restaurantService= "http://localhost:5001"
 export const utilsService = "http://localhost:9000";
 export const realtimeService = "http://localhost:5004";
 export const riderService = "http://localhost:5005";
+export const adminService = "http://localhost:5006";
+
 
 
 

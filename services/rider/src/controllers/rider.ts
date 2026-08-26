@@ -227,7 +227,10 @@ export const acceptOrder = TryCatch(async (req: AuthenticatedRequest, res) => {
 
 export const fetchMyCurrentOrder = TryCatch(
   async (req: AuthenticatedRequest, res) => {
+
     const riderUserId = req.user?._id;
+
+    console.log(riderUserId)
 
     if (!riderUserId) {
       return res.status(400).json({
@@ -239,6 +242,8 @@ export const fetchMyCurrentOrder = TryCatch(
       userId: riderUserId,
       isVerified: true,
     });
+
+    console.log(rider)
 
     if (!rider) {
       return res.status(404).json({ message: "rider not found" });
