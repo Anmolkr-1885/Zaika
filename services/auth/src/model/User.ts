@@ -27,6 +27,7 @@ const schema: Schema<IUser> = new Schema(
       default: null,
     },
   },
+  
   {
     timestamps: true,
   }
