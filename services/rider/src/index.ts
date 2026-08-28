@@ -17,6 +17,10 @@ app.use(cors());
 
 app.use("/api/rider", riderRoutes);
 
+app.use("/health",(req,res)=>{
+  res.json({message:"RIDER is up and running"})
+})
+
 app.listen(process.env.PORT, () => {
   console.log(`Rider service is running on port ${process.env.PORT}`);
   connectDB();

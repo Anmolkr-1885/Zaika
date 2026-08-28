@@ -603,7 +603,7 @@ export const getCurrentOrderForRider = TryCatch(async (req, res) => {
     });
   }
 
-  const { riderId } = req.query;
+const riderId = String(req.query.riderId || "");
 
   if (!riderId) {
     return res.status(400).json({
