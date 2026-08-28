@@ -14,6 +14,10 @@ app.use(cors());
 
 app.use("/api/auth", authRoute);
 
+app.use("/health",(req,res)=>{
+  res.json({message:"AUTH is up and running"})
+})
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

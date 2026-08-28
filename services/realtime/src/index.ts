@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1/internal", internalRoute);
+app.use("/health",(req,res)=>{
+  res.json({message:"REALTIME is up and running"})
+})
 
 const server = http.createServer(app);
 

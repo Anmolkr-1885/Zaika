@@ -28,6 +28,10 @@ app.use("/api/cart",cartRoutes);
 app.use("/api/address", addressRoutes);
 app.use("/api/order", orderRoutes);
 
+app.use("/health",(req,res)=>{
+  res.json({message:"RESTAURANT is up and running"})
+})
+
 
 app.listen(PORT, () => {
   console.log(`Restaurant service is running on port ${PORT}`);
