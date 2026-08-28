@@ -24,7 +24,7 @@ const OrderSuccess = () => {
 
       try {
 
-        const response = await axios.post(
+     await axios.post(
           `${utilsService}/api/payment/stripe/verify`,
           {
             sessionId,
