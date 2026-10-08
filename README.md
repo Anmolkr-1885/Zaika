@@ -4,7 +4,7 @@ Zaika is a complete food-delivery platform built from scratch, inspired by real-
 
 This was built as a team project to deeply understand how large-scale food delivery systems work under the hood — from service isolation and async messaging to live GPS tracking and role-based access control.
 
-### 🔗 [Live Application Link](https://zaika-frontend.onrender.com)
+### 🔗 [Live Application Link](https://zaika-frontend-e2ei.vercel.app/)
 ### 🎥 [Video Link](https://zaika-demoVideo.com)
 
 
